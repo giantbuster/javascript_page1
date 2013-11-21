@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+	Jefferson Lam
+	11-20-13
+	JavaScript
+
+	Assignment:
+		1. Create a program that goes through each value in array x, where x is [3,5,'Dojo', 'rocks', {name: 'Michael', title: 'Sensei'}]. Have it display each value of the array as well as the type of each value. For example, it should say or log "3: 'number', 5: 'number', 'rocks': 'string', ...".
+		2. Add a new value in the array x using a push method. New value you should add is 100.
+		3. Add a new array as the last member of the array then log x in the console and analyze how x looks.
+		4. Create a simple for loop that sums all the numbers between 1 to 500. Have console log the final sum.
+		5. Create another simple for loop that sums all the numbers between 1 to 1 million. Now, we want you to figure out how long in milliseconds this operation takes. Study http://www.w3schools.com/jsref/jsref_gettime.asp to learn more about how you can get the time in milliseconds. You can basically get the time of the operation by getting this timestamp before you start the for loop and getting another timestamp after the for loop is over. By subtracting the two timestamps, you can obtain how long this operation took.
+-->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Page 1</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+    <script type="text/javascript">
+  		var x = [3,5,'Dojo', 'rocks', {name: 'Michael', title: 'Sensei'}];
+  		var string = '';
+  		for (var i = 0; i < x.length; i++){
+  			string += x[i] + ": " + typeof(x[i]);
+  			if (i+1 < x.length) string += ", ";
+  		}
+  		console.log(string);
+
+  		x.push(100);
+  		x.push([]);
+  		console.log(x);
+
+  		var sum = 0;
+  		for (var i = 1; i<500; i++){
+  			sum += i;
+  		}
+  		console.log("Summation of 1 to 500: " + sum);
+  		var d = new Date();
+  		var dTime = (d.getTime());
+  		for (var i = 1; i<1000000; i++){
+  			sum += i;
+  		}
+  		var e = new Date();
+  		var eTime = (e.getTime());
+  		var timeTaken = eTime - dTime;
+  		console.log("Time taken for one million operations: " + timeTaken + "ms");
+    </script>
+</head>
+<body>
+	<div class="container">
+	</div>
+</body>
+</html>
